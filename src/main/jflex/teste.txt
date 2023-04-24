@@ -1,0 +1,23 @@
+program MathProblem;
+
+var
+  a, b, c, d: Integer;
+  x: Real;
+
+begin
+  Write("Digite o valor de a: ");
+  Readln(a);
+  Write("Digite o valor de b: ");
+  Readln(b);
+  Write("Digite o valor de c: ");
+  Readln(c);
+  Write("Digite o valor de d: ");
+  Readln(d);
+
+  x := (a + b) / (c - d);
+
+  Writeln("O valor de x é: ", x:0:2);
+
+  Write("Pressione Enter para fechar o programa...");
+  Readln;
+end.
