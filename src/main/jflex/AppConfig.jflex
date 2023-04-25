@@ -110,7 +110,7 @@ class Token {
 %column
 %line
 
-/* Regras JFlex ------------------------------- */
+
 NUMEROS = [0-9]
 LETRAS = [A-Za-z]
 INT = 0 | [1-9]{NUMEROS}*
@@ -122,7 +122,7 @@ OPERADORES = ":="|">="|"<="|"<>"|"="|":"|"+"|"-"|"/"|"*"|">"|"<"|","|";"|"."
 PARENTESES = "\(" | "\)"
 EOF = [\r\n]+
 ESPACO = {EOF} | [ \t\f]
-/* FIM Regras JFlex ------------------------------- */
+
 
 %{
 public static void main(String[] args) {
@@ -164,14 +164,14 @@ public static void main(String[] args) {
 
 %%
 
-/* AÇÕES JFLEX ------------------------------ */
+
 {ESPACO}     {}
 {INT}                 { return new Token(Classe.cInt, new Valor(Integer.parseInt(yytext())), yyline + 1, yycolumn + 1); }
 {PALAVRAS_RESERVADAS} { return new Token(Classe.cPalRes, new Valor(yytext()), yyline + 1, yycolumn + 1); }
 {IDENTIFICADOR}       { return new Token(Classe.cId, new Valor(yytext()), yyline + 1, yycolumn + 1); }
 {STRING}              { return new Token(Classe.cString, new Valor(yytext()), yyline + 1, yycolumn + 1); }
 {REAL}                { return new Token(Classe.cReal, new Valor(Double.parseDouble(yytext())), yyline + 1, yycolumn + 1); }
-{OPERADORES} { /* ":="|">="|"<="|"<>"|"="|":"|"+"|"-"|"/"|"*"|">"|"<"|","|";"|"." */
+{OPERADORES} {
     switch (yytext()) {
         case ":=": return new Token(Classe.cAtribuicao, new Valor(yytext()), yyline + 1, yycolumn + 1);
         case ">=": return new Token(Classe.cMaiorIgual, new Valor(yytext()), yyline + 1, yycolumn + 1);
@@ -196,4 +196,3 @@ public static void main(String[] args) {
         case ")": return new Token(Classe.cParDir, new Valor(yytext()), yyline + 1, yycolumn + 1);
     }
 }
-/* FIM AÇÕES JFLEX ------------------------------ */

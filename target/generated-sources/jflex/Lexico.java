@@ -913,8 +913,7 @@ public static void main(String[] args) {
           // fall through
           case 10: break;
           case 3:
-            { /* ":="|">="|"<="|"<>"|"="|":"|"+"|"-"|"/"|"*"|">"|"<"|","|";"|"." */
-    switch (yytext()) {
+            { switch (yytext()) {
         case ":=": return new Token(Classe.cAtribuicao, new Valor(yytext()), yyline + 1, yycolumn + 1);
         case ">=": return new Token(Classe.cMaiorIgual, new Valor(yytext()), yyline + 1, yycolumn + 1);
         case "<=": return new Token(Classe.cMenorIgual, new Valor(yytext()), yyline + 1, yycolumn + 1);

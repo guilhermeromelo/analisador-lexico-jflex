@@ -21,3 +21,17 @@ begin
   Write('Pressione Enter para fechar o programa...');
   Readln;
 end.
+
+1.5  0.5  12.32151
+
+:temqueler
+:=temqueler
+
+<temqueler
+<=temqueler
+<>temqueler
+
+>temqueler
+>=temqueler
+
++ - / * = , ; . ( ) := : <= <> < > >= >
