@@ -115,7 +115,7 @@ NUMEROS = [0-9]
 LETRAS = [A-Za-z]
 INT = 0 | [1-9]{NUMEROS}*
 IDENTIFICADOR = {LETRAS}({LETRAS}|{NUMEROS})*
-STRING = \"[^\"]*\"
+STRING = \'[^\']*\'
 REAL = {INT}\.{NUMEROS}+
 PALAVRAS_RESERVADAS = "and"|"array"|"begin"|"case"|"const"|"div"|"do"|"downto"|"else"|"end"|"file"|"for"|"function"|"goto"|"if"|"in"|"label"|"mod"|"nil"|"not"|"of"|"or"|"packed"|"procedure"|"program"|"record"|"repeat"|"set"|"then"|"to"|"type"|"until"|"var"|"while"|"with"
 OPERADORES = ":="|">="|"<="|"<>"|"="|":"|"+"|"-"|"/"|"*"|">"|"<"|","|";"|"."
